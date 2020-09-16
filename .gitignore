@@ -1,1 +1,4 @@
 node_modules
+Desktop.ini
+**/Desktop.ini
+package-lock.json
