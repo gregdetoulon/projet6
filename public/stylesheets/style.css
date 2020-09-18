@@ -501,7 +501,11 @@ body {
 .form-v8-content .form-detail .input-text {
 	margin-bottom: 31px;
 }
-.form-v8-content .form-detail input {
+textarea{
+    overflow: auto;
+      
+}
+.form-v8-content .form-detail input, textarea {
 	width: 100%;
     padding: 0px 10px 15px 10px;
     border: 1px solid transparent;
@@ -713,4 +717,8 @@ body {
   opacity: 0.5;
   font-weight: bolder;
 }
+
+/* upload image */
+
+
 

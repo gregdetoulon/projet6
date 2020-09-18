@@ -1,0 +1,42 @@
+<%- include('./partials/header'); %>
+
+<div class="page-content">
+    <div class="form-v8-content">
+
+        <div class="form-right ">
+            <div class="tab ">
+                <div class="tab-inner ">
+                    <div class="tablinks text-center text-success "><strong>New Wit</strong></div>
+                </div>    
+            </div> 
+
+<form class="form-detail" action="#" method="post">
+   <div class="tabcontent">
+     
+        <div class="form-row mt-3">
+            <label class="form-row-inner">
+                <input type="text" name="nameWit" class="input-text" required>
+                <span class="label">Wit Name</span>
+                  <span class="border"></span>
+            </label>
+        </div>
+        <div class="form-row">
+            <label class="form-row-inner">
+                <textarea name="describe"class="input-text" required></textarea>
+                <span class="label">Describe</span>
+                <span class="border"></span>
+            </label>
+        </div>
+
+        <input type="file" class="filestyle mb-5" >
+
+        <div class="form-row-last">
+            <input type="submit" name="register" class="register" value="create">
+        </div>
+    </div>
+</form>
+
+
+
+
+<%- include('./partials/footer'); %>
