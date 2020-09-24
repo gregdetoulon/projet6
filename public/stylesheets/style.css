@@ -102,6 +102,7 @@ body {
 /* Media qurey section */
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    
     .container {
         margin: 0;
     }
@@ -363,9 +364,14 @@ body {
 	}
 }
 /* card */
+.card-img-top{
+    height: 17rem;
+}
 
 .card {
     font-size: 13px;
+    width: 25rem;
+    height: 30rem;
 }
 .card a {
     font-size: 13px;
@@ -577,6 +583,7 @@ textarea{
 }
 /* Responsive */
 @media screen and (max-width: 991px) {
+    
 	.form-v8-content {
 		margin: 180px 20px;
 		flex-direction:  column;
@@ -595,10 +602,18 @@ textarea{
 	}
 	.form-v8-content .form-detail .register {
 		margin-bottom: 80px;
-	}
+    }
+    
 }
 
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 425px) {
+    .card{
+        width: unset;
+        height: unset;
+    }
+    .card-img-top{
+        height: unset;
+    }
 	.form-v8-content .tab {
 		flex-direction: column;
 		-o-flex-direction: column;
