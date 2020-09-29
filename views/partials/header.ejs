@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <title>WitPlace?</title>
 </head>
@@ -12,14 +14,28 @@
     <nav class="nav sticky-top">
         <div class="container">
             <div class="logo">
-                <a href="#">WitPlace?</a>
+                <a href="/">WitPlace?</a>
             </div>
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/users/login">Login</a></li>
-                    <li><a href="/users/profil">Profil</a></li>
-                    <li><a href="/wits/NewWit"> <!-- sous condition de connection -->+ New Wit</a></li>
+                    <li>
+                        <% if (userId.length > 0) { %>
+                            <a href="/users/logout">Logout</a>
+                          <% } else { %>
+                            <a href="/users/login">Login</a>
+                            <% } %>
+                    </li>
+                    <li>
+                        <% if (userId.length > 0) { %>
+                            <a href="/users/profil">Profil</a>
+                        <% } %>
+                    </li>
+                    <li>
+                    <% if (userId.length > 0) { %>
+                        <a href="/wits/NewWit">+ New Wit</a>
+                    <% } %>
+                    </li>
                 </ul>
             </div>
             <span class="navTrigger">
@@ -29,8 +45,4 @@
             </span>
         </div>
     </nav>
-
-    
-
-
     

@@ -6,24 +6,40 @@
   <h2 class="myH2">What is this place?</h2>
   <p class="myP">The social network for lovers of discovery, nature and cultural places!</p>
 </div>
-<div class="container_search">
-  <input type="text" placeholder="Search...">
-  <div class="search"></div>
+
+
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <form class="searchbar" action="/wits/search" method="post">
+          <input class="search_input"  autocomplete="off" type="text" name="search" placeholder="Search Wit">
+          <button type="submit" class="search_icon"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
 </div>
-<a href="#" class="text-decoration-none text-dark">
+
+
+
+
+
+
 <div class="d-flex align-content-between justify-content-center flex-wrap">
+  
   <% for (let i = 0; i < wits.length; i++) { %>
+  <a href="/wits/details/<%= wits[i]._id %>" class="text-decoration-none text-dark" >
   <div class="card m-3">
     <img src="<%= wits[i].imageUrl %>" class="card-img-top" alt="place picture" style="object-fit: cover;">
     <div class="card-body overflow-hidden">
       <h3 class="card-title font-weight-bold"><%= wits[i].title %></h5>
       <p class="card-text"><%= wits[i].description %></p>
     </div>
-    <div class="card-footer text-muted">
-      <%= wits[i]._id %>
-    </div>
+    
   </div>
+  </a>
   <%}%>
-</div></a>
+</div>
+
+
+
+
 
 <%- include('./partials/footer'); %>

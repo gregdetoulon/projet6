@@ -9,7 +9,8 @@ const jwt = require("jsonwebtoken");
 
 /* GET users listing. */
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  let userId = typeof req.session.token === 'undefined' ? '' :  "user connected";
+  res.render('login', {userId:''});
 });
 
 router.post('/signUp', (req, res, next) => {
@@ -42,20 +43,29 @@ router.post('/signIn', (req, res)=>{
         if (!valid) {
           return res.status(401).json({ error: 'Mot de passe incorrect !' });
         }
-        res.status(200).json({
-          userId: user._id,
-          token: jwt.sign(
-            { userId: user._id },
-            'RANDOM_TOKEN_SECRET',
-            { expiresIn: '24h' }
-          )
-          })
+        req.session.token = jwt.sign(
+          { userId: user._id },
+          '1234' 
+        )
+        res.redirect('/');
+        
       })
       .catch(error => res.status(500).json({ error }));
   })
-  .catch(error => res.status(500).json({ error }));
-
-  res.redirect('/')
+  .catch(error => res.status(500).json({ error })); 
 });
+
+router.get('/logout', function (req, res) {
+  
+  req.session.token = null;
+  req.session.destroy();
+  res.redirect('/');
+})
+
+router.get('/profil', function (req, res) {
+  let userId = typeof req.session.token === 'undefined' ? '' :  "user connected";
+  res.render('profil', { userId});
+ 
+})
 
 module.exports = router;

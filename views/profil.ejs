@@ -1,0 +1,49 @@
+<%- include('./partials/header'); %>
+
+
+
+
+
+<div class="page-content">
+
+
+<div class="form-v8-content">
+
+        <div class="form-right ">
+            <div class="tab ">
+                <div class="tab-inner ">
+                    <div class="tablinks text-center text-success "><strong>New password</strong></div>
+                </div>    
+            </div> 
+
+<form class="form-detail"   enctype="multipart/form-data" action="/wits/newWit" method="post">
+   <div class="tabcontent">
+
+        <div class="form-row">
+            <label class="form-row-inner">
+                <input type="password" name="password" id="password" class="input-text" required>
+                <span class="label">Password</span>
+                <span class="border"></span>
+            </label>
+        </div>
+        <div class="form-row">
+            <label class="form-row-inner">
+                <input type="password" name="confirm_password" id="confirm_password" class="input-text" required>
+                <span class="label">Confirm Password</span>
+                <span class="border"></span>
+            </label>
+        </div>
+
+        <div class="form-row-last">
+            <input type="submit" name="register" class="register" value="create">
+        </div>
+    </div>
+</form>
+
+</div>
+</div>
+ 
+
+
+
+<%- include('./partials/footer'); %>
