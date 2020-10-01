@@ -3,16 +3,14 @@
 
 <div class="page-content">
     <div class="form-v8-content">
-
         <div class="form-right">
             <div class="tab">
                 <div class="tab-inner">
                     <button class="tablinks" onclick="openCity(event, 'sign-in')"id="defaultOpen">Sign In</button>
                 </div>
                 <div class="tab-inner">
-                    <button class="tablinks" onclick="openCity(event, 'sign-up')" >Sign Up</button>
-                </div>
-                
+                    <button class="tablinks" onclick="openCity(event, 'sign-up')">Sign Up</button>
+                </div>   
             </div>
             <form class="form-detail" action="/users/signUp" method="post">
                 <div class="tabcontent" id="sign-up">
@@ -51,12 +49,11 @@
             </form>
             <form class="form-detail" action="/users/signIn" method="post">
                 <div class="tabcontent" id="sign-in">
-                    
                     <div class="form-row">
                         <label class="form-row-inner">
                             <input type="text" name="mail" id="your_email_1" class="input-text" required>
                             <span class="label">E-Mail</span>
-                              <span class="border"></span>
+                            <span class="border"></span>
                         </label>
                     </div>
                     <div class="form-row">

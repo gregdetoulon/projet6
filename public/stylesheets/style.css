@@ -376,7 +376,7 @@ body {
 
 /* LOGIN */
 .page-content {
-	width: 100%;
+    width: 100%;
 	margin:  0 auto;
 	display: flex;
 	display: -webkit-flex;
@@ -610,6 +610,7 @@ textarea{
     }
     .card-img-top{
         height: unset;
+        width: 30rem;
     }
 	.form-v8-content .tab {
 		flex-direction: column;
@@ -650,7 +651,7 @@ transition: width 0.4s linear;
 
 .searchbar > .search_input{
 padding: 0 10px;
-width: 400px;
+width: 200px;
 caret-color:#53c83c;
 transition: width 0.4s linear;
 }

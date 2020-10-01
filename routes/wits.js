@@ -53,8 +53,14 @@ router.get('/details/:id', function (req, res,next) {
 
 router.post('/search', (req, res)=>{
   witsModel.findOne({title: req.body.search})
-   .then(found => res.redirect(`/wits/details/${found._id}`))
-   .catch(error=> console.log(error));
+   .then(found => {
+      if (found.isValid == true) {
+        res.redirect(`/wits/details/${found._id}`);
+      }else {
+        res.redirect('/')
+      };
+   })
+    .catch(error => res.status(400).json({ error }))
 })
 
 module.exports = router;

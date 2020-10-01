@@ -1,24 +1,15 @@
 <%- include('./partials/header'); %>
 
-
-
-
-
 <div class="page-content">
-
-
 <div class="form-v8-content">
-
-        <div class="form-right ">
-            <div class="tab ">
-                <div class="tab-inner ">
-                    <div class="tablinks text-center text-success "><strong>New password</strong></div>
-                </div>    
-            </div> 
-
-<form class="form-detail"   enctype="multipart/form-data" action="/wits/newWit" method="post">
-   <div class="tabcontent">
-
+<div class="form-right">
+        <div class="tab ">
+        <div class="tab-inner ">
+            <div class="tablinks text-center text-success "><strong>New password</strong></div>
+        </div>    
+        </div> 
+    <form class="form-detail"  action="/users/newPassword" method="post">
+        <div class="tabcontent mb-5">
         <div class="form-row">
             <label class="form-row-inner">
                 <input type="password" name="password" id="password" class="input-text" required>
@@ -26,24 +17,21 @@
                 <span class="border"></span>
             </label>
         </div>
-        <div class="form-row">
+        <div class="form-row my-5">
             <label class="form-row-inner">
                 <input type="password" name="confirm_password" id="confirm_password" class="input-text" required>
                 <span class="label">Confirm Password</span>
                 <span class="border"></span>
             </label>
         </div>
-
+        
         <div class="form-row-last">
-            <input type="submit" name="register" class="register" value="create">
+            <input type="submit" name="changePassword" id="btnSubmit" class="register" value="submit">
         </div>
-    </div>
-</form>
-
+        </div>
+    </form>
+</div>
 </div>
 </div>
  
-
-
-
 <%- include('./partials/footer'); %>

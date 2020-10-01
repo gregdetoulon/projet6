@@ -14,10 +14,12 @@
     }
 
     // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
+    
 
     $(function () {
+        $("#defaultOpen").click();
         $("#btnSubmit").click(function () {
+            console.log('coucou');
             var password = $("#password").val();
             var confirmPassword = $("#confirm_password").val();
             if (password != confirmPassword) {
@@ -26,7 +28,9 @@
             }
             return true;
         });
+        
     });
+
 
     
 

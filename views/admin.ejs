@@ -1,0 +1,36 @@
+<%- include('./partials/header'); %>
+
+<section class="home">
+</section>
+<div class="my-5">
+  <h2 class="myH2">If we validated all this!</h2>
+  <p class="myP">Admin Page</p>
+</div>
+<div class="container mb-5">
+<table class="table">
+    <thead class="thead-dark h4">
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Describe</th>
+        <th scope="col">Valid?</th>
+        <th scope="col">Delete?</th>
+      </tr>
+    </thead>
+    <tbody class="h4 border">
+    <% for (let i = 0; i < wits.length; i++) { %>
+      <tr>
+        <th scope="row"><%= wits[i].title %></th>
+        <td><%= wits[i].description %></td>
+        <td><a href="/users/adminValid/<%= wits[i]._id %>">Valid</a></td>
+        <td><a href="/users/adminDelete/<%= wits[i]._id %>">Delete</a></td>
+      </tr>
+    <% } %>
+    </tbody>
+</table>
+</div>  
+
+
+
+
+
+<%- include('./partials/footer'); %>
