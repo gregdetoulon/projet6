@@ -3,11 +3,11 @@
 <div class="page-content">
 <div class="form-v8-content">
 <div class="form-right">
-        <div class="tab ">
-        <div class="tab-inner ">
-            <div class="tablinks text-center text-success "><strong>New password</strong></div>
-        </div>    
-        </div> 
+    <div class="tab ">
+    <div class="tab-inner ">
+        <div class="tablinks text-center text-success "><strong>Hello <%= user.userName %>!<br><%= user.mail %><br> <br> Change your password</strong></div>
+    </div>    
+    </div> 
     <form class="form-detail"  action="/users/newPassword" method="post">
         <div class="tabcontent mb-5">
         <div class="form-row">
@@ -17,14 +17,13 @@
                 <span class="border"></span>
             </label>
         </div>
-        <div class="form-row my-5">
+        <div class="form-row ">
             <label class="form-row-inner">
                 <input type="password" name="confirm_password" id="confirm_password" class="input-text" required>
                 <span class="label">Confirm Password</span>
                 <span class="border"></span>
             </label>
         </div>
-        
         <div class="form-row-last">
             <input type="submit" name="changePassword" id="btnSubmit" class="register" value="submit">
         </div>
