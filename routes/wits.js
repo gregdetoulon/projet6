@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var witsModel = require('../models/witsModel');
 const multer = require('multer');
+const usersModel = require('../models/usersModel');
 // SET STORAGE
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -11,7 +12,8 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + '-' + file.originalname)
   }
 }) 
-const upload = multer({ storage: storage })
+const upload = multer({ storage: storage });
+const jwt = require("jsonwebtoken");
 
 
 
@@ -61,6 +63,41 @@ router.post('/search', (req, res)=>{
       };
    })
     .catch(error => res.status(400).json({ error }))
+})
+
+router.post('/comment', (req, res) =>{
+  var decoded = jwt.decode(req.session.token);
+  usersModel.findOne({_id: decoded.userId})
+  .then(user => {
+    const com = {userName:user.userName, comment:req.body.comm, date:new Date()};
+    witsModel.findByIdAndUpdate(req.body.id, {$push:{"comment":com}},{safe: true, upsert: true})
+    .then(updateCom => {
+      console.log(com);
+      res.status(200).send({com})
+      
+    }).catch(error => {throw error})
+
+  }).catch(error => {throw error})
+  
+})
+
+router.post('/Likes', (req, res) =>{
+  var decoded = jwt.decode(req.session.token);
+  usersModel.findOne({_id: decoded.userId})
+  .then(user => {
+    const Lk = {Likes:user._id};
+    witsModel.findByIdAndUpdate(req.body.id, {$push:{"Likes":Lk}},{returnOriginal: false, safe: true, upsert: true})
+    .then(updatelike => {
+      witsModel.findOne({_id:req.body.id})
+      .then(obj =>{
+       res.status(200).send({obj}) 
+      })
+      
+      
+    }).catch(error => {throw error})
+
+  }).catch(error => {throw error})
+  
 })
 
 module.exports = router;
