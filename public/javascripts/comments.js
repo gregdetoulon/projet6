@@ -38,7 +38,7 @@ $(()=>{
             data: {id},
             success: function (data, status, msg) {
                 if (data) {  
-                    $("#likeUp").append(`${data.obj.Likes.length}`);
+                    $("#likeUp").text(`${data.obj.Likes.length}`);
                 }
                 
             },
