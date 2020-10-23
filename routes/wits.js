@@ -91,13 +91,13 @@ router.post('/Likes', (req, res) =>{
       witsModel.findOne({_id:req.body.id})
       .then(obj =>{
        res.status(200).send({obj}) 
-      })
-      
-      
+      })  
     }).catch(error => {throw error})
 
   }).catch(error => {throw error})
   
 })
+
+
 
 module.exports = router;

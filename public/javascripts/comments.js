@@ -38,13 +38,19 @@ $(()=>{
             data: {id},
             success: function (data, status, msg) {
                 if (data) {  
-                    $("#likeUp").text(`${data.obj.Likes.length}`);
-                }
-                
+                    console.log(data);
+                $(`
+                <div id="return" class="form-group p-3 ">
+                <div class="btn btn-success font-weight-bold">&#128540; <span>${data.obj.Likes.length}</span></div> 
+                </div>
+            `).replaceAll("#replace");
+                    //$("#likeUp").text(`${data.obj.Likes.length}`);
+                }    
             },
             error: function (err, status,) {
                 console.log(err);
             },
         })
     })
-})
+
+})   
